@@ -50,7 +50,7 @@ export default class RestaurantsDAO {
         }
     }
 
-    static async getRestaurantByID(id) {
+    static async getRestaurantById(id) {
         try {
             const pipeline = [
                 {
@@ -94,7 +94,7 @@ export default class RestaurantsDAO {
         }
     }
 
-    static async getCuisines() {
+    static async getRestaurantCuisines() {
         let cuisines = []
         try {
             cuisines = await restaurants.distinct("cuisine")
