@@ -17,7 +17,7 @@ export default class ReviewsController {
         review,
         date,
       )
-      res.json({ status: "success" })
+      res.json({ status: 'success' })
     } catch (e) {
       res.status(500).json({ error: e.message })
     }
@@ -47,7 +47,7 @@ export default class ReviewsController {
         )
       }
 
-      res.json({ status: "success" })
+      res.json({ status: 'success' })
     } catch (e) {
       res.status(500).json({ error: e.message })
     }
@@ -57,12 +57,11 @@ export default class ReviewsController {
     try {
       const reviewId = req.query.id
       const userId = req.body.user_id
-      console.log(reviewId)
       const reviewResponse = await ReviewsDAO.deleteReview(
         reviewId,
         userId,
       )
-      res.json({ status: "success" })
+      res.json({ status: 'success' })
     } catch (e) {
       res.status(500).json({ error: e.message })
     }

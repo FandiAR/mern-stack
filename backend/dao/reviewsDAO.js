@@ -9,7 +9,7 @@ export default class ReviewsDAO {
             return
         }
         try {
-            reviews = await conn.db(process.env.RESTREVIEWS_NS).collection("reviews")
+            reviews = await conn.db(process.env.RESTREVIEWS_NS).collection('reviews')
         } catch (e) {
             console.error(`Unable to establish collection handles in userDAO: ${e}`)
         }
@@ -27,7 +27,6 @@ export default class ReviewsDAO {
 
             return await reviews.insertOne(reviewDoc)
         } catch (e) {
-            console.log('ERROR', e)
             console.error(`Unable to post review: ${e}`)
             return { error: e }
         }
