@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from 'react';
 
-const Login = props => {
+const Login = (props) => {
+  const { login, history } = props;
 
   const initialUserState = {
     name: "",
@@ -9,15 +10,15 @@ const Login = props => {
 
   const [user, setUser] = useState(initialUserState);
 
-  const handleInputChange = event => {
+  const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUser({ ...user, [name]: value });
   };
 
-  const login = () => {
-    props.login(user)
-    props.history.push('/');
-  }
+  const handleLogin = () => {
+    login(user)
+    history.push('/');
+  };
 
   return (
     <div className="submit-form">
@@ -48,7 +49,7 @@ const Login = props => {
           />
         </div>
 
-        <button onClick={login} className="btn btn-success">
+        <button onClick={handleLogin} className="btn btn-success">
           Login
         </button>
       </div>
